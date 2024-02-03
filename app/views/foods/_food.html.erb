@@ -1,0 +1,37 @@
+<div id="<%= dom_id food %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= food.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Category:</strong>
+    <%= food.category %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Subcategory:</strong>
+    <%= food.subcategory %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Subcategory other title:</strong>
+    <%= food.subcategory_other_title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cooking method:</strong>
+    <%= food.cooking_method %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sparkling:</strong>
+    <%= food.sparkling %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this food", food, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this food", edit_food_path(food), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

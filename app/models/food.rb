@@ -31,5 +31,5 @@ class Food < ApplicationRecord
   ].freeze
   enum cooking_method: COOKING_METHOD_VALUES.to_h { |v| [v, v] }
 
-  validates :name, presence: true
+  validates :title, presence: true
 end

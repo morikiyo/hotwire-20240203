@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    attributes:
+      food:
+        title: 名称
+        category: カテゴリ
+        categories:
+          vegetable: 野菜
+          meat: 肉類
+          seafood: 海鮮
+          drink: 飲料
+        subcategory: サブカテゴリ
+        subcategories:
+          root_vegetable: 根菜
+          leaf_vegetable: 葉菜
+          stem_vegetable: 茎菜
+          fruit_vegetable: 果菜
+          beef: 牛肉
+          pork: 豚肉
+          chicken: 鶏肉
+          fish: 魚
+          shellfish: 貝
+          water: 水
+          soft_drink: ソフトドリンク
+          tea: お茶
+          coffee: コーヒー
+          other: その他
+        subcategory_other_title: サブカテゴリ（その他）
+        cooking_method: 調理法
+        cooking_methods:
+          requires_cooking: 加熱用
+          for_raw_consumption: 生食用
+        sparkling: 炭酸

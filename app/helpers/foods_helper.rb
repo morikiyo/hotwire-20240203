@@ -3,8 +3,8 @@ module FoodsHelper
     Food::categories.values.map { |v| [I18n.t("activerecord.attributes.food.categories.#{v}"), v] }
   end
 
-  def food_subcategory_options
-    Food::subcategories.values.map { |v| [I18n.t("activerecord.attributes.food.subcategories.#{v}"), v] }
+  def food_subcategory_options(food)
+    food.subcategory_values_for_category.map { |v| [I18n.t("activerecord.attributes.food.subcategories.#{v}"), v] }
   end
 
   def food_cooking_method_options

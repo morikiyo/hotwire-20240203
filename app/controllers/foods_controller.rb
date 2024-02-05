@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
   end
 
   def new
-    @food = Food.new
+    @food = Food.new(new_food_params)
   end
 
   def edit
@@ -54,5 +54,9 @@ class FoodsController < ApplicationController
         :cooking_method,
         :sparkling
       )
+    end
+
+    def new_food_params
+      params.fetch(:food, {}).permit(:category, :subcategory)
     end
 end

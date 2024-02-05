@@ -31,23 +31,20 @@
     <%= form.text_field :subcategory_other_title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :cooking_method %>
-    <div class="mt-2 flex gap-x-4">
-      <%=
-        form.collection_radio_buttons :cooking_method, food_cooking_method_options, :last, :first do |b|
-          b.label(class: 'block') {
-            b.radio_button(class: 'shadow border border-gray-200 outline-none mr-1') +
-            b.text
-          }
-        end
-      %>
-    </div>
+  <div class="my-5 mt-2 flex gap-x-4">
+    <%=
+      form.collection_radio_buttons :cooking_method, food_cooking_method_options, :last, :first do |b|
+        b.label(class: 'block') {
+          b.radio_button(class: 'shadow border border-gray-200 outline-none mr-1') +
+          b.text
+        }
+      end
+    %>
   </div>
 
   <div class="my-5">
+    <%= form.check_box :sparkling, class: "shadow rounded-md border border-gray-200 outline-none" %>
     <%= form.label :sparkling %>
-    <%= form.check_box :sparkling, class: "block shadow rounded-md border border-gray-200 outline-none mt-2 h-5 w-5" %>
   </div>
 
   <div class="inline">

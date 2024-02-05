@@ -32,6 +32,9 @@ class Food < ApplicationRecord
   enum cooking_method: COOKING_METHOD_VALUES.to_h { |v| [v, v] }
 
   validates :title, presence: true
+  validates :cooking_method, presence: true, if: :requires_cooking_method?
+
+  before_validation :clear_subcategory_other_title, unless: :subcategory_other?
 
   def subcategory_values_for_category
     case category.to_s
@@ -80,4 +83,10 @@ class Food < ApplicationRecord
   def checkable_sparkling?
     category == 'drink'
   end
+
+  private
+
+    def clear_subcategory_other_title
+      self.subcategory_other_title = nil
+    end
 end

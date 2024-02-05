@@ -26,8 +26,14 @@ ja:
           coffee: コーヒー
           other: その他
         subcategory_other_title: サブカテゴリ（その他）
-        cooking_method: 調理法
+        cooking_method: 加熱用／生食用
         cooking_methods:
           requires_cooking: 加熱用
           for_raw_consumption: 生食用
         sparkling: 炭酸
+    errors:
+      models:
+        food:
+          attributes:
+            cooking_method:
+              blank: のいずれかを選択してください

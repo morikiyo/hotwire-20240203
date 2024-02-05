@@ -16,15 +16,37 @@
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :category %>
-    <%= form.select :category, food_category_options, { include_blank: true }, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
-  </div>
+  <%= turbo_frame_tag(
+        'food-category-form',
+        data: {
+          controller: 'food-category-form',
+          food_category_form_path_value: new_food_path,
+        }
+      ) do %>
+    <div class="my-5">
+      <%= form.label :category %>
+      <%= form.select :category, food_category_options,
+                      { include_blank: true },
+                      {
+                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                        data: {
+                          action: 'food-category-form#replaceCategoryForm',
+                          food_category_form_target: 'category',
+                        },
+                      } %>
+    </div>
 
-  <%= turbo_frame_tag('food-category-form') do %>
     <div class="my-5">
       <%= form.label :subcategory %>
-      <%= form.select :subcategory, food_subcategory_options(food), { include_blank: true }, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
+      <%= form.select :subcategory, food_subcategory_options(food),
+                      { include_blank: true },
+                      {
+                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full",
+                        data: {
+                          action: 'food-category-form#replaceCategoryForm',
+                          food_category_form_target: 'subcategory',
+                        },
+                      } %>
     </div>
 
     <% if food.subcategory_other? %>
